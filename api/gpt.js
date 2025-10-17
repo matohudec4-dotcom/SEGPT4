@@ -1,6 +1,8 @@
 export default async function handler(req, res) {
   // ─── 1) Vstup a sanitácia ────────────────────────────────────────────────
-  const raw = (req.query.prompt || "").toString().slice(0, 600);
+  const raw = decodeURIComponent(req.query.prompt || "")
+  .toString()
+  .slice(0, 600);
   // odstráň @tagy a extra medzery
   const prompt = raw.replace(/@\w+/g, "").replace(/\s+/g, " ").trim();
   if (!process.env.OPENAI_API_KEY) {
