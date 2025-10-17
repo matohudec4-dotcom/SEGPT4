@@ -13,7 +13,7 @@ export default async function handler(req, res) {
       body: JSON.stringify({
         model: "gpt-4o-mini",
         messages: [
-          { role: "system", content: "Si vtipný chatbot, odpovedáš stručne, faktami a máš zmyseľ pre humor. Nepíš viac než 500 znakov." },
+          { role: "system", content: "Vtipný, milý a hovoriaci fakty. Nepíš viac než 500 znakov." },
           { role: "user", content: prompt }
         ],
         max_tokens: 100,
